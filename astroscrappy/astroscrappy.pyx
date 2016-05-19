@@ -245,7 +245,7 @@ def detect_cosmics(indat, inmask=None, float sigclip=4.5, float sigfrac=0.3,
 
         # Replacing negative values by large number
         print(conved)
-        conved[conved < 0] = 1000
+        conved[conved < 0] = max(conved)
         # This is called L+ in the original LA Cosmic/cosmics.py
         s = rebin(conved)
         del conved
