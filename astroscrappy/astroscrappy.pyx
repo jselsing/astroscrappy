@@ -243,7 +243,7 @@ def detect_cosmics(indat, inmask=None, float sigclip=4.5, float sigfrac=0.3,
         conved = laplaceconvolve(subsam)
         del subsam
 
-        conved[conved < 0] = 0.0
+        # conved[conved < 0] = 0.0 # Uncommented by jselsing 19.05.2016, to remove cold pixels
         # This is called L+ in the original LA Cosmic/cosmics.py
         s = rebin(conved)
         del conved
